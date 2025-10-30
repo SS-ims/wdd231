@@ -1,0 +1,176 @@
+/* Base styling for mobile-first layout */
+:root {
+  --bg: #0d0d0d;
+  --text: #e0e0e0;
+  --accent: #00ffff;
+  --accent2: #0077ff;
+  --card-bg: #141414;
+  --completed: #0aff99;
+  --font-body: 'Inter', sans-serif;
+  --font-header: 'Rajdhani', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  color: var(--text);
+  transition: background 0.3s ease;
+}
+
+/* Header + Headings */
+header span,
+h1,
+h2 {
+  font-family: var(--font-header);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+}
+header span:hover {
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header img {
+  width: 40px;
+}
+
+#menu-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#menu-btn:hover {
+  color: var(--accent2);
+}
+
+/* NAVIGATION */
+nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  border-top: 1px solid #222;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #222;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  background: rgba(0, 255, 255, 0.05);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+nav a.active {
+  color: var(--accent2);
+  text-shadow: 0 0 10px var(--accent2);
+}
+
+nav.show {
+  display: flex;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 1rem;
+}
+
+section {
+  background: linear-gradient(145deg, #141414, #1e1e1e);
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+
+h1, h2 {
+  color: var(--accent);
+}
+
+/* COURSE CARDS */
+.course-cards {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.course-card {
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.25s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+  border-color: var(--accent2);
+}
+
+.course-card.completed {
+  border-left-color: var(--completed);
+  background: linear-gradient(145deg, #142a1a, #0f1f16);
+}
+
+.course-card.completed:hover {
+  box-shadow: 0 0 12px rgba(10, 255, 153, 0.3);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, #0a0a0a, #141414);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+footer .social a {
+  color: var(--accent);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer .social a:hover {
+  color: var(--accent2);
+  text-shadow: 0 0 8px var(--accent2);
+}
