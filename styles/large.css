@@ -1,0 +1,138 @@
+/* Larger screen adjustments */
+@media (min-width: 700px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1.5rem;
+    background: transparent;
+    border-top: none;
+  }
+
+  nav a {
+    border: none;
+    position: relative;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  #menu-btn {
+    display: none;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  main h1 {
+    grid-column: 1 / -1;
+    margin: 0 0 1rem 0;
+  }
+
+  .about {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .photo {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .courses {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+
+  .filters {
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .filters button {
+    flex: 1;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    min-width: 120px;
+    max-width: 180px;
+  }
+
+  .filters button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+  }
+
+  .filters button.active {
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+  }
+
+  .course-cards {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .course-card {
+    padding: 1.5rem;
+  }
+
+  .course-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .course-info {
+    gap: 1rem;
+  }
+
+  .desc-text {
+    font-size: 0.9rem;
+  }
+
+  .tech-tags {
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  footer {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
