@@ -1,0 +1,322 @@
+/* COLOR VARIABLES */
+:root {
+  --primary-color: #4B0082;
+  --secondary-color: #D4AF37;
+  --bg-light: #f9f9f9;
+  --text-dark: #222;
+}
+
+/* BASIC STYLES */
+body {
+  font-family: 'Lora', serif;
+  color: var(--text-dark);
+  margin: 0;
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a.active {
+  color: var(--secondary-color);
+}
+
+main {
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.view-toggle button {
+  background: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-toggle button:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* GRID VIEW */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+}
+
+.grid section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5em;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.grid img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* LIST VIEW */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.list section {
+  background: #eef5f5;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  border-left: 5px solid var(--primary-color);
+}
+
+.list section img {
+  width: 60px;
+  height: 60px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 0;
+  margin-top: 2em;
+}
+
+/* RESPONSIVE DESIGN - Mobile First Approach */
+
+/* Base styles are mobile-first (320px+) */
+/* Ensure no horizontal scrolling */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Mobile-specific adjustments (320px - 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 0.75em;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .logo {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+  
+  main {
+    padding: 1em;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+  
+  .view-toggle {
+    gap: 0.5em;
+    margin: 0.5em 0;
+  }
+  
+  .view-toggle button {
+    padding: 6px;
+    min-width: 40px;
+  }
+  
+  .view-toggle button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Grid adjustments for very small screens */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  
+  .grid section {
+    padding: 1em;
+  }
+  
+  .grid img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* List view adjustments */
+  .list section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5em;
+    padding: 0.75em;
+  }
+  
+  .list section img {
+    width: 50px;
+    height: 50px;
+    justify-self: center;
+  }
+  
+  footer {
+    padding: 1em 0;
+    font-size: 0.9em;
+  }
+}
+
+/* Small tablets and large phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .list section {
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: 1em;
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .list section {
+    grid-template-columns: auto 2fr 1fr 1fr;
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  header {
+    padding: 1.5em;
+  }
+  
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+  }
+  
+  .grid section {
+    padding: 2em;
+  }
+  
+  .list section {
+    grid-template-columns: auto 2fr 1fr 1fr;
+    gap: 2em;
+    padding: 1.5em;
+  }
+}
+
+/* Prevent images from overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure buttons don't cause overflow */
+button {
+  max-width: 100%;
+}
+
+/* Ensure text doesn't overflow */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* =========================
+   MEMBERSHIP BADGES
+   ========================= */
+.badge {
+  display: inline-block;
+  margin: 0.5em 0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.gold {
+  background: linear-gradient(90deg, #FFD700, #D4AF37);
+  color: #222;
+}
+
+.silver {
+  background: linear-gradient(90deg, #C0C0C0, #A9A9A9);
+  color: #222;
+}
+
+.bronze {
+  background: linear-gradient(90deg, #CD7F32, #A0522D);
+  color: #fff;
+}

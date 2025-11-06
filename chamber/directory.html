@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore local businesses and organizations that are members of the Wakanda Chamber of Commerce." />
+  <meta name="author" content="Solomon Sakala" />
+
+  <title>Wakanda Chamber of Commerce | Business Directory</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Facebook Open Graph Meta -->
+  <meta property="og:title" content="Wakanda Chamber of Commerce Directory" />
+  <meta property="og:description" content="Connect with businesses, entrepreneurs, and innovators in Wakanda." />
+  <meta property="og:image" content="https://ss-ims.github.io/wdd231/chamber/images/og-image.svg" />
+  <meta property="og:url" content="https://ss-ims.github.io/wdd231/chamber/directory.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wakanda Chamber of Commerce" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+<script src="scripts/directory.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="images/logo.png" alt="Wakanda Chamber Logo" class="logo" />
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Business Directory</h1>
+
+    <div class="view-toggle">
+      <button id="grid" aria-label="Grid View"><img src="images/grid-icon.svg" alt="Grid View" /></button>
+      <button id="list" aria-label="List View"><img src="images/list-icon.svg" alt="List View" /></button>
+    </div>
+
+    <article id="directory" class="grid"></article>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Wakanda Chamber of Commerce | WDD 231 | Solomon Sakala</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

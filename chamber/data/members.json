@@ -1,0 +1,60 @@
+{
+  "members": [
+    {
+      "name": "ShuriTech Innovations",
+      "address": "1001 Vibranium Blvd, Birnin Zana, Wakanda",
+      "phone": "(555) 100-2000",
+      "website": "https://shuritech.wk",
+      "image": "business1.png",
+      "membership": 3
+    },
+    {
+      "name": "Golden Panther Café",
+      "address": "45 Market Street, Birnin Zana, Wakanda",
+      "phone": "(555) 123-4567",
+      "website": "https://goldenpanther.wk",
+      "image": "business2.png",
+      "membership": 2
+    },
+    {
+      "name": "Wakanda Finance Group",
+      "address": "500 Unity Avenue, Wakanda City",
+      "phone": "(555) 765-4321",
+      "website": "https://wakandafinance.wk",
+      "image": "business3.png",
+      "membership": 3
+    },
+    {
+      "name": "Okoye Security Services",
+      "address": "21 Border Road, Wakanda",
+      "phone": "(555) 200-3000",
+      "website": "https://okoyesecurity.wk",
+      "image": "business4.png",
+      "membership": 1
+    },
+    {
+      "name": "Vibranium Energy",
+      "address": "9 Tech District, Birnin Zana, Wakanda",
+      "phone": "(555) 999-8888",
+      "website": "https://vibraniumenergy.wk",
+      "image": "business5.png",
+      "membership": 2
+    },
+    {
+      "name": "Wakanda Innovations Lab",
+      "address": "77 Research Park, Wakanda",
+      "phone": "(555) 700-6000",
+      "website": "https://innovationlab.wk",
+      "image": "business6.png",
+      "membership": 3
+    },
+    {
+      "name": "Tribal Prints & Designs",
+      "address": "30 Artisan Lane, Wakanda City",
+      "phone": "(555) 404-3030",
+      "website": "https://tribalprints.wk",
+      "image": "business7.png",
+      "membership": 1
+    }
+  ]
+}
