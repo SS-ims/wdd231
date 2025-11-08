@@ -2,6 +2,39 @@
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
+// Hamburger Menu Functionality
+const hamburgerMenu = document.getElementById("hamburger-menu");
+const navLinks = document.getElementById("nav-links");
+
+hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+// Close mobile menu when clicking on a nav link
+navLinks.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    hamburgerMenu.classList.remove("active");
+    navLinks.classList.remove("active");
+  }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!hamburgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
+    hamburgerMenu.classList.remove("active");
+    navLinks.classList.remove("active");
+  }
+});
+
+// Close mobile menu when window is resized to larger screen
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    hamburgerMenu.classList.remove("active");
+    navLinks.classList.remove("active");
+  }
+});
+
 // Fetch and display members
 const directory = document.querySelector("#directory");
 

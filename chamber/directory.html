@@ -26,8 +26,19 @@
 <body>
   <header>
     <nav>
-      <img src="images/logo.png" alt="Wakanda Chamber Logo" class="logo" />
-      <ul class="nav-links">
+      <div class="nav-brand">
+        <img src="images/logo-wc.svg" width="300" height="300" alt="Wakanda Chamber Logo" class="logo" />
+      </div>
+      
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
         <li><a href="directory.html" class="active">Directory</a></li>
@@ -40,8 +51,8 @@
     <h1>Business Directory</h1>
 
     <div class="view-toggle">
-      <button id="grid" aria-label="Grid View"><img src="images/grid-icon.svg" alt="Grid View" /></button>
-      <button id="list" aria-label="List View"><img src="images/list-icon.svg" alt="List View" /></button>
+      <button id="grid" aria-label="Grid View"><img src="images/grid.svg" width="48" height="48" alt="Grid View" /></button>
+      <button id="list" aria-label="List View"><img src="images/list.svg" width="48" height="48" alt="List View" /></button>
     </div>
 
     <article id="directory" class="grid"></article>
