@@ -211,7 +211,7 @@ html, body {
     display: flex;
   }
 
-  /* Change nav to flex column on mobile */
+  /* Change nav to flex column on mobile but keep brand row horizontal */
   nav {
     flex-direction: column;
     align-items: stretch;
@@ -223,6 +223,10 @@ html, body {
     align-items: center;
     width: 100%;
     margin-bottom: 0;
+  }
+
+  .hamburger {
+    margin-left: auto;
   }
 
   /* Navigation links integrated into header */
