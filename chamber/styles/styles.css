@@ -6,6 +6,11 @@
   --text-dark: #222;
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Lora', serif;
+
+  --text-on-light: #222222;
+  --text-on-dark: #ffffff;
+  --active-bg-dark: rgba(75, 0, 130, 0.3);
+  --hover-bg-light: rgba(75, 0, 130, 0.1);
 }
 
 /* BASIC STYLES */
@@ -93,10 +98,10 @@ nav {
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--text-on-dark);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
@@ -106,10 +111,16 @@ nav {
 
 .nav-links a.active {
   color: var(--secondary-color);
+  background-color: var(--active-bg-dark);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
 }
 
 .nav-links a:hover {
   color: var(--secondary-color);
+  background-color: var(--hover-bg-light);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
 }
 
 main {
@@ -280,13 +291,13 @@ html, body {
   }
 
   .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--hover-bg-light);
     color: var(--secondary-color);
   }
 
   .nav-links a.active {
     color: var(--secondary-color);
-    background-color: rgba(212, 175, 55, 0.2);
+    background-color: var(--active-bg-dark);
   }
   
   .logo {
@@ -559,11 +570,11 @@ h1, h2, h3, p {
 .hero-tagline {
   font-size: 1.4rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   margin: 1.5rem auto 2.5rem;
   max-width: 600px;
   line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   font-style: italic;
 }
 
