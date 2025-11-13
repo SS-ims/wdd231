@@ -34,7 +34,17 @@ header {
   z-index: 100;
 }
 
-/* NAVIGATION STYLES */
+/* Alternative header styling for .navbar */
+header.navbar-header {
+  padding: 0.6em 1rem;
+}
+
+/* ===============================
+   LEGACY NAVIGATION STYLES (Commented Out)
+   Use .navbar system above instead
+   =============================== */
+   
+/*
 nav {
   display: flex;
   justify-content: space-between;
@@ -52,8 +62,13 @@ nav {
   max-width: 200px;
   height: auto;
 }
+*/
 
-/* Hamburger Menu */
+/* ===============================
+   LEGACY HAMBURGER STYLES (Commented Out)
+   =============================== */
+   
+/*
 .hamburger {
   display: none;
   flex-direction: column;
@@ -86,8 +101,13 @@ nav {
 .hamburger.active .hamburger-line:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+*/
 
-/* Navigation Links */
+/* ===============================
+   LEGACY NAVIGATION LINKS (Commented Out)
+   =============================== */
+
+/*
 .nav-links {
   display: flex;
   list-style: none;
@@ -122,6 +142,7 @@ nav {
   border-radius: 4px;
   padding: 0.5rem 1rem;
 }
+*/
 
 main {
   padding: 2em;
@@ -207,6 +228,184 @@ footer {
 }
 
 /* RESPONSIVE DESIGN - Mobile First Approach */
+
+/* ===============================
+   ALTERNATIVE SIMPLIFIED NAVIGATION
+   (Complements existing nav system)
+   =============================== */
+
+/* Alternative navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Alternative logo container */
+.nav-logo img {
+  height: 55px;
+  max-width: none;
+}
+
+/* Navigation links - Desktop default (row layout) */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar .nav-links a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  color: var(--secondary-color);
+  background-color: var(--active-bg-dark);
+}
+
+/* Simplified hamburger for .navbar */
+.navbar .hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-on-dark);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Enhanced mobile styles for .navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Create a top row for logo and hamburger */
+  .navbar .nav-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    order: 2; /* Place hamburger after logo */
+  }
+
+  /* Mobile menu for .navbar system - using max-height approach */
+  .navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: static;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+    transition: all 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+  }
+
+  .navbar .nav-links.show {
+    max-height: 300px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
+
+  .navbar .nav-links li {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .nav-links a {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar .nav-links a:hover {
+    background-color: var(--hover-bg-light);
+  }
+
+  .navbar .nav-links a.active {
+    background-color: var(--active-bg-dark);
+  }
+}
+
+/* Desktop styles for .navbar */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar .nav-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .hamburger {
+    display: none;
+  }
+
+  .navbar .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-top: none;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .navbar .nav-links li {
+    width: auto;
+    text-align: left;
+  }
+
+  .navbar .nav-links a {
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    border-radius: 4px;
+    display: inline-block;
+    width: auto;
+  }
+}
+
+/* ===============================
+   EXISTING NAVIGATION SYSTEM CONTINUES
+   =============================== */
 
 
 * {
