@@ -4,15 +4,21 @@
   --secondary-color: #D4AF37;
   --bg-light: #f9f9f9;
   --text-dark: #222;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
 }
 
 /* BASIC STYLES */
 body {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   color: var(--text-dark);
   margin: 0;
   background-color: var(--bg-light);
   line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
 
 header {
