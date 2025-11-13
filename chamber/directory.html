@@ -29,27 +29,19 @@
 <script src="scripts/directory.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-brand">
-        <img src="images/logo-wc.svg" width="300" height="300" alt="Wakanda Chamber Logo" class="logo" />
+  <header class="navbar-header">
+    <div class="navbar">
+      <div class="nav-logo">
+        <img src="images/logo-wc.svg" alt="Wakanda Chamber Logo">
+        <button class="hamburger" id="hamburger">☰</button>
       </div>
-      
-      <!-- Hamburger Button -->
-      <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Links -->
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
         <li><a href="directory.html" class="active">Directory</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
   <main>

@@ -2,20 +2,55 @@
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
-// Hamburger Menu Functionality
-const hamburgerMenu = document.getElementById("hamburger-menu");
-const navLinks = document.getElementById("nav-links");
+// HAMBURGER MENU FUNCTIONALITY
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
 
-hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenu.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
+  console.log('DOM loaded');
+  console.log('Hamburger element:', hamburger);
+  console.log('Nav Links element:', navLinks);
 
-// Close mobile menu when clicking on a nav link
-navLinks.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    hamburgerMenu.classList.remove("active");
-    navLinks.classList.remove("active");
+  if (hamburger && navLinks) {
+    console.log('Both elements found, adding event listener');
+    
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Hamburger clicked!');
+      
+      // Toggle the show class
+      const isShown = navLinks.classList.contains('show');
+      
+      if (isShown) {
+        navLinks.classList.remove('show');
+        console.log('Menu closed');
+      } else {
+        navLinks.classList.add('show');
+        console.log('Menu opened');
+      }
+      
+      console.log('Nav links classes:', navLinks.className);
+      console.log('Computed style display:', window.getComputedStyle(navLinks).display);
+    });
+
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('show');
+        console.log('Menu closed by link click');
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('show');
+        console.log('Menu closed by outside click');
+      }
+    });
+  } else {
+    console.error('Hamburger or nav-links element not found!');
   }
 });
 

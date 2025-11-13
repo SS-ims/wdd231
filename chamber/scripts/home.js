@@ -2,6 +2,58 @@
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
+// HAMBURGER MENU FUNCTIONALITY
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  console.log('DOM loaded');
+  console.log('Hamburger element:', hamburger);
+  console.log('Nav Links element:', navLinks);
+
+  if (hamburger && navLinks) {
+    console.log('Both elements found, adding event listener');
+    
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Hamburger clicked!');
+      
+      // Toggle the show class
+      const isShown = navLinks.classList.contains('show');
+      
+      if (isShown) {
+        navLinks.classList.remove('show');
+        console.log('Menu closed');
+      } else {
+        navLinks.classList.add('show');
+        console.log('Menu opened');
+      }
+      
+      console.log('Nav links classes:', navLinks.className);
+      console.log('Computed style display:', window.getComputedStyle(navLinks).display);
+    });
+
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('show');
+        console.log('Menu closed by link click');
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('show');
+        console.log('Menu closed by outside click');
+      }
+    });
+  } else {
+    console.error('Hamburger or nav-links element not found!');
+  }
+});
+
 // WEATHER API SETTINGS
 const API_KEY = "0032371a1ab5579119bdd08ab8e12b78";
 const lat = -20.1325;  // Bulawayo
