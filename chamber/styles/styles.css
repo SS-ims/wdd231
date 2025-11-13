@@ -506,3 +506,38 @@ h1, h2, h3, p {
   background: linear-gradient(90deg, #CD7F32, #A0522D);
   color: #fff;
 }
+
+/* HOME PAGE SECTIONS */
+
+.events ul {
+  list-style: square;
+  margin-left: 20px;
+}
+
+.weather, .events, .spotlights {
+  background: #fff;
+  padding: 1.5em;
+  margin: 2em 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+}
+
+.spotlight-card {
+  text-align: center;
+  background: #fefefe;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.spotlight-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}

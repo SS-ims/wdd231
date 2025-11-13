@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to the Wakanda Chamber of Commerce. Discover events, weather, and business opportunities." />
+  <meta name="author" content="Your Name" />
+  <title>Wakanda Chamber of Commerce | Home</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Social Meta -->
+  <meta property="og:title" content="Wakanda Chamber of Commerce" />
+  <meta property="og:description" content="Connecting entrepreneurs, investors, and local businesses." />
+  <meta property="og:image" content="images/og-hero.jpg" />
+  <meta property="og:url" content="https://yourwebsite/chamber/index.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/home.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <img src="images/logo.png" class="logo" alt="Chamber Logo">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Stronger Together in Business & Innovation</h1>
+    <p>Connecting entrepreneurs, innovators, and leaders across Wakanda.</p>
+    <a href="join.html" class="cta-button">Join the Chamber</a>
+  </section>
+
+  <main>
+
+    <!-- EVENTS SECTION -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li>Entrepreneur Networking Breakfast – Feb 18, 2025</li>
+        <li>Wakanda Tech Expo – March 10, 2025</li>
+        <li>Investment Readiness Workshop – April 5, 2025</li>
+      </ul>
+    </section>
+
+    <!-- WEATHER SECTION -->
+    <section class="weather">
+      <h2>Current Weather – Bulawayo, Zimbabwe</h2>
+      <div id="current-weather"></div>
+
+      <h3>3-Day Forecast</h3>
+      <div id="forecast"></div>
+    </section>
+
+    <!-- SPOTLIGHTS -->
+    <section class="spotlights">
+      <h2>Business Spotlights</h2>
+      <div id="spotlight-container" class="spotlight-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Wakanda Chamber of Commerce | WDD 231 | Your Name</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  
+</body>
+</html>
