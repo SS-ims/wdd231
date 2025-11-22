@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the Wakanda Chamber of Commerce and connect with local business leaders." />
+  <meta name="author" content="Solomon Sakala" />
+  <title>Join the Chamber | Wakanda Chamber of Commerce</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts (no @import) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+
+
+  <!-- Defer JS -->
+  <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="images/logo-wc.svg" alt="Wakanda Chamber Logo">
+      </div>
+      <button id="menu-button" class="hamburger" aria-label="Menu">☰</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="join-main">
+    <!-- FORM -->
+    <section class="join-form-section">
+      <h1>Membership Application</h1>
+      <p>Become a valued member of the Wakanda Chamber of Commerce and enjoy networking, exposure, and business growth opportunities.</p>
+
+      <form id="membershipForm" method="get" action="thankyou.html" novalidate>
+        <label>
+          First Name:
+          <input type="text" name="fname" title="Enter your first name" required autocomplete="given-name">
+        </label>
+
+        <label>
+          Last Name:
+          <input type="text" name="lname" title="Enter your last name" required autocomplete="family-name">
+        </label>
+
+        <label>
+          Organizational Title:
+          <input type="text" name="organization-title" title="Your title within the organization" pattern="[A-Za-z\\s\\-]{7,}" autocomplete="organization-title">
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" title="Enter a valid email" required autocomplete="email" placeholder="example@domain.com">
+        </label>
+
+        <label>
+          Mobile Number:
+          <input type="tel" name="phone" title="Enter your mobile number" required autocomplete="tel">
+        </label>
+
+        <label>
+          Business/Organization Name:
+          <input type="text" name="organization" title="Business or organization name" required autocomplete="organization">
+        </label>
+
+        <label>
+          Membership Level:
+          <select name="membership" title="Select membership level" required>
+            <option value="">Select a Level</option>
+            <option value="np">NP Membership (Non-Profit)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <label>
+          Business Description:
+          <textarea name="description" title="Describe your business"></textarea>
+        </label>
+
+        <input type="hidden" name="timestamp" id="timestamp">
+        <button type="submit" class="cta-button">Submit Application</button>
+      </form>
+    </section>
+
+    <!-- MEMBERSHIP LEVEL CARDS -->
+    <aside class="membership-cards">
+      <h2>Membership Levels</h2>
+
+      <div class="card np-card">NP Membership
+        <a href="#np-modal">Learn More</a>
+      </div>
+
+      <div class="card bronze-card">Bronze Membership
+        <a href="#bronze-modal">Learn More</a>
+      </div>
+
+      <div class="card silver-card">Silver Membership
+        <a href="#silver-modal">Learn More</a>
+      </div>
+
+      <div class="card gold-card">Gold Membership
+        <a href="#gold-modal">Learn More</a>
+      </div>
+    </aside>
+
+    <!-- MODALS -->
+    <dialog id="np-modal">
+      <h3>NP (Non-Profit) Membership</h3>
+      <p>No fees. Access to community events and networking sessions.</p>
+      <button class="close-modal">Close</button>
+    </dialog>
+
+    <dialog id="bronze-modal">
+      <h3>Bronze Membership</h3>
+      <p>Includes non-profit benefits + training sessions and online directory listing.</p>
+      <button class="close-modal">Close</button>
+    </dialog>
+
+    <dialog id="silver-modal">
+      <h3>Silver Membership</h3>
+      <p>Includes Bronze benefits + social media promotion and event discounts.</p>
+      <button class="close-modal">Close</button>
+    </dialog>
+
+    <dialog id="gold-modal">
+      <h3>Gold Membership</h3>
+      <p>Includes Silver benefits + sponsorship opportunities and homepage spotlights.</p>
+      <button class="close-modal">Close</button>
+    </dialog>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Wakanda Chamber of Commerce | WDD 231 | Solomon Sakala</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>

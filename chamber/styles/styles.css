@@ -890,3 +890,189 @@ h1, h2, h3, p {
   height: 120px;
   object-fit: contain;
 }
+
+/* ==========================================================
+   JOIN PAGE STYLES (ADDED SECTION)
+   Integrates with existing global layout and responsive rules
+   ========================================================== */
+
+.join-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+
+.join-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.join-form-section h1 {
+  color: var(--primary-color);
+  text-align: left;
+  font-family: var(--font-heading);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+input, select, textarea, button {
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 6px rgba(212,175,55,0.4);
+  outline: none;
+}
+
+/* === FORM VALIDATION FEEDBACK === */
+input:invalid {
+  border-color: #d9534f;
+  background-color: #fff5f5;
+}
+
+input:valid {
+  border-color: #28a745;
+  background-color: #f6fff6;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* === MEMBERSHIP CARDS === */
+.membership-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-around;
+}
+
+.membership-cards h2 {
+  width: 100%;
+  text-align: center;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+.card {
+  flex: 1 1 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.2em;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.card a {
+  display: block;
+  margin-top: 0.5em;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.np-card { border-top: 4px solid #28a745; }
+.bronze-card { border-top: 4px solid #cd7f32; }
+.silver-card { border-top: 4px solid #c0c0c0; }
+.gold-card { border-top: 4px solid #d4af37; }
+
+/* === DIALOG MODALS === */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5em 2em;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.close-modal {
+  margin-top: 1em;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* === RESPONSIVE LAYOUT === */
+@media (min-width: 800px) {
+  .join-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .join-form-section {
+    flex: 2;
+  }
+
+  .membership-cards {
+    flex: 1;
+    flex-direction: column;
+    position: sticky;
+    top: 120px;
+  }
+}
+
+/* === BUTTON STYLES === */
+.cta-button {
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  border: none;
+  font-weight: bold;
+  padding: 0.8em 2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c547;
+  box-shadow: 0 4px 10px rgba(212,175,55,0.5);
+  transform: translateY(-2px);
+}
+
+/* === MOBILE REFINEMENTS === */
+@media (max-width: 600px) {
+  .join-main {
+    flex-direction: column;
+  }
+
+  .join-form-section form {
+    padding: 1em;
+  }
+
+  .membership-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    transform: none;
+    opacity: 1;
+  }
+}
