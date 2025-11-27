@@ -759,9 +759,9 @@ h1, h2, h3, p {
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -780,7 +780,7 @@ h1, h2, h3, p {
 .cta-button {
   display: inline-block;
   background: var(--secondary-color);
-  color: var(--text-dark);
+  color: #222222;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.3rem;
@@ -792,6 +792,7 @@ h1, h2, h3, p {
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   position: relative;
   overflow: hidden;
+  border: 2px solid #1a1a1a;
 }
 
 .cta-button::before {
@@ -813,6 +814,7 @@ h1, h2, h3, p {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
   background: #E6C547;
+  color: #000000;
 }
 
 /* Responsive Hero Styles */
@@ -941,12 +943,12 @@ input:focus, select:focus, textarea:focus {
 
 /* === FORM VALIDATION FEEDBACK === */
 input:invalid {
-  border-color: #d9534f;
+  border-color: #c82333;
   background-color: #fff5f5;
 }
 
 input:valid {
-  border-color: #28a745;
+  border-color: #155724;
   background-color: #f6fff6;
 }
 
@@ -984,9 +986,10 @@ textarea {
 .card a {
   display: block;
   margin-top: 0.5em;
-  color: var(--secondary-color);
+  color: #4B0082;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .np-card { border-top: 4px solid #28a745; }
@@ -1042,19 +1045,20 @@ dialog {
 /* === BUTTON STYLES === */
 .cta-button {
   background: var(--secondary-color);
-  color: var(--text-dark);
-  border: none;
+  color: #222222;
+  border: 2px solid #1a1a1a;
   font-weight: bold;
   padding: 0.8em 2em;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #e6c547;
   box-shadow: 0 4px 10px rgba(212,175,55,0.5);
   transform: translateY(-2px);
+  color: #000000;
 }
 
 /* === MOBILE REFINEMENTS === */
