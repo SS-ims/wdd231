@@ -3,14 +3,17 @@
   --primary-color: #4B0082;
   --secondary-color: #D4AF37;
   --bg-light: #f9f9f9;
-  --text-dark: #222;
+  --text-dark: #222222;
+  --text-light: #ffffff;
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Lora', serif;
-
-  --text-on-light: #222222;
-  --text-on-dark: #ffffff;
-  --active-bg-dark: rgba(75, 0, 130, 0.3);
-  --hover-bg-light: rgba(75, 0, 130, 0.1);
+  --active-bg: rgba(75, 0, 130, 0.3);
+  --hover-bg: rgba(75, 0, 130, 0.1);
+  --border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow-light: 0 3px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --error-color: #c82333;
+  --success-color: #155724;
 }
 
 /* BASIC STYLES */
@@ -28,7 +31,7 @@ h1, h2, h3, h4 {
 
 header {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-light);
   padding: 1em;
   position: relative;
   z-index: 100;
@@ -39,110 +42,7 @@ header.navbar-header {
   padding: 0.6em 1rem;
 }
 
-/* ===============================
-   LEGACY NAVIGATION STYLES (Commented Out)
-   Use .navbar system above instead
-   =============================== */
-   
-/*
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  z-index: 1001;
-}
-
-.logo {
-  max-width: 200px;
-  height: auto;
-}
-*/
-
-/* ===============================
-   LEGACY HAMBURGER STYLES (Commented Out)
-   =============================== */
-   
-/*
-.hamburger {
-  display: none;
-  flex-direction: column;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-  position: relative;
-}
-
-.hamburger-line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 2px 0;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-
-/* Hamburger Animation */
-.hamburger.active .hamburger-line:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .hamburger-line:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-*/
-
-/* ===============================
-   LEGACY NAVIGATION LINKS (Commented Out)
-   =============================== */
-
-/*
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1em;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--text-on-dark);
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.nav-links li {
-  list-style: none;
-  margin: 0;
-}
-
-.nav-links a.active {
-  color: var(--secondary-color);
-  background-color: var(--active-bg-dark);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-}
-
-.nav-links a:hover {
-  color: var(--secondary-color);
-  background-color: var(--hover-bg-light);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-}
-*/
+/* LEGACY NAVIGATION STYLES - Removed unused .nav-brand, .logo, and commented-out legacy code */
 
 main {
   padding: 2em;
@@ -174,9 +74,10 @@ h1 {
 .view-toggle button:hover {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
+  color: var(--text-dark);
 }
 
-/* GRID VIEW */
+/* GRID VIEW - Directory Page */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -184,10 +85,10 @@ h1 {
 }
 
 .grid section {
-  background: #fff;
+  background: var(--text-light);
   border-radius: 10px;
   padding: 1.5em;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
   text-align: center;
 }
 
@@ -197,7 +98,7 @@ h1 {
   object-fit: contain;
 }
 
-/* LIST VIEW */
+/* LIST VIEW - Directory Page */
 .list {
   display: flex;
   flex-direction: column;
@@ -221,20 +122,13 @@ h1 {
 /* FOOTER */
 footer {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-light);
   text-align: center;
   padding: 1.5em 0;
   margin-top: 2em;
 }
 
-/* RESPONSIVE DESIGN - Mobile First Approach */
-
-/* ===============================
-   ALTERNATIVE SIMPLIFIED NAVIGATION
-   (Complements existing nav system)
-   =============================== */
-
-/* Alternative navbar container */
+/* NAVBAR SYSTEM - Primary Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -249,7 +143,7 @@ footer {
   max-width: none;
 }
 
-/* Navigation links - Desktop default (row layout) */
+/* Navigation links - Base styles */
 .navbar .nav-links {
   display: flex;
   list-style: none;
@@ -271,7 +165,7 @@ footer {
 .navbar .nav-links a:hover,
 .navbar .nav-links a.active {
   color: var(--secondary-color);
-  background-color: var(--active-bg-dark);
+  background-color: var(--active-bg);
 }
 
 /* Simplified hamburger for .navbar */
@@ -316,7 +210,7 @@ footer {
     flex-direction: column;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: var(--border-light);
     margin-top: 0.5rem;
     overflow: hidden;
     border-radius: 0 0 8px 8px;
@@ -344,7 +238,7 @@ footer {
     padding: 1rem 1.5rem;
     display: block;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: var(--border-light);
     border-radius: 0;
     min-height: 48px;
     display: flex;
@@ -353,11 +247,11 @@ footer {
   }
 
   .navbar .nav-links a:hover {
-    background-color: var(--hover-bg-light);
+    background-color: var(--hover-bg);
   }
 
   .navbar .nav-links a.active {
-    background-color: var(--active-bg-dark);
+    background-color: var(--active-bg);
   }
 }
 
@@ -404,173 +298,8 @@ footer {
 }
 
 /* ===============================
-   EXISTING NAVIGATION SYSTEM CONTINUES
+   LEGACY MOBILE NAVIGATION (Removed - using .navbar system)
    =============================== */
-
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 0.75em;
-    transition: all 0.3s ease;
-  }
-
-  /* Show hamburger menu on mobile */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Change nav to flex column on mobile but keep brand row horizontal */
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .nav-brand {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .hamburger {
-    margin-left: auto;
-  }
-
-  /* Navigation links integrated into header */
-  .nav-links {
-    position: static;
-    top: auto;
-    left: auto;
-    width: 100%;
-    background-color: var(--primary-color);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    z-index: 999;
-    box-shadow: none;
-  }
-
-  /* Show navigation when active */
-  .nav-links.active {
-    max-height: 300px;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-links li {
-    list-style: none;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0.75rem;
-    display: block;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .nav-links a:hover {
-    background-color: var(--hover-bg-light);
-    color: var(--secondary-color);
-  }
-
-  .nav-links a.active {
-    color: var(--secondary-color);
-    background-color: var(--active-bg-dark);
-  }
-  
-  .logo {
-    max-width: 160px;
-    height: auto;
-  }
-
-  /* Ensure main content is properly spaced */
-  main {
-    padding: 1em;
-    position: relative;
-    z-index: 1;
-    margin-top: 0;
-  }
-  
-  h1 {
-    font-size: 1.5em;
-    margin: 0.5em 0;
-  }
-  
-  .view-toggle {
-    gap: 0.75em;
-    margin: 1em 0;
-    justify-content: center;
-  }
-  
-  .view-toggle button {
-    padding: 10px;
-    min-width: 50px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .view-toggle button img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  /* Grid adjustments for very small screens */
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1em;
-  }
-  
-  .grid section {
-    padding: 1em;
-  }
-  
-  .grid img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  /* List view adjustments */
-  .list section {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 0.5em;
-    padding: 0.75em;
-  }
-  
-  .list section img {
-    width: 50px;
-    height: 50px;
-    justify-self: center;
-  }
-  
-  footer {
-    padding: 1em 0;
-    font-size: 0.9em;
-  }
-}
 
 /* Small tablets and large phones (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -584,153 +313,17 @@ html, body {
   }
 }
 
-/* Tablets (769px - 1024px) */
-@media (min-width: 769px) {
-  /* Hide hamburger menu on larger screens */
-  .hamburger {
-    display: none;
-  }
-
-  /* Reset navigation for larger screens */
-  .nav-links {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    left: auto;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  nav {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    max-width: 1200px;
-    align-items: center;
-  }
-  
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .list section {
-    grid-template-columns: auto 2fr 1fr 1fr;
-  }
-}
-
-/* Desktop (1025px+) */
-@media (min-width: 1025px) {
-  header {
-    padding: 1.5em;
-  }
-  
-  /* Ensure hamburger is hidden on desktop */
-  .hamburger {
-    display: none;
-  }
-
-  /* Desktop navigation layout */
-  nav {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-  }
-
-  .nav-links {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 2rem;
-    left: auto;
-  }
-
-  .nav-links a {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-  }
-  
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-  }
-  
-  .grid section {
-    padding: 2em;
-  }
-  
-  .list section {
-    grid-template-columns: auto 2fr 1fr 1fr;
-    gap: 2em;
-    padding: 1.5em;
-  }
-}
-
-/* Prevent images from overflowing */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Ensure buttons don't cause overflow */
-button {
-  max-width: 100%;
-}
-
-/* Ensure text doesn't overflow */
-h1, h2, h3, p {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
 /* =========================
    MEMBERSHIP BADGES
    ========================= */
-.badge {
-  display: inline-block;
-  margin: 0.5em 0;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-.gold {
-  background: linear-gradient(90deg, #FFD700, #D4AF37);
-  color: #222;
-}
-
-.silver {
-  background: linear-gradient(90deg, #C0C0C0, #A9A9A9);
-  color: #222;
-}
-
-.bronze {
-  background: linear-gradient(90deg, #CD7F32, #A0522D);
-  color: #fff;
-}
-
-/* HOME PAGE SECTIONS */
+/* === UTILITY STYLES === */
 
 /* =========================
    HERO SECTION
    ========================= */
 .hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, #6B46C1 50%, var(--secondary-color) 100%);
-  color: #fff;
+  color: var(--text-light);
   text-align: center;
   padding: 4rem 2rem;
   position: relative;
@@ -759,7 +352,7 @@ h1, h2, h3, p {
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-light);
   margin-bottom: 1rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   line-height: 1.1;
@@ -769,7 +362,7 @@ h1, h2, h3, p {
 .hero-tagline {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #ffffff;
+  color: var(--text-light);
   margin: 1.5rem auto 2.5rem;
   max-width: 600px;
   line-height: 1.5;
@@ -793,6 +386,7 @@ h1, h2, h3, p {
   position: relative;
   overflow: hidden;
   border: 2px solid #1a1a1a;
+  cursor: pointer;
 }
 
 .cta-button::before {
@@ -866,11 +460,11 @@ h1, h2, h3, p {
 }
 
 .weather, .events, .spotlights {
-  background: #fff;
+  background: var(--text-light);
   padding: 1.5em;
   margin: 2em 0;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-light);
 }
 
 .spotlight-grid {
@@ -884,7 +478,7 @@ h1, h2, h3, p {
   background: #fefefe;
   padding: 1em;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-light);
 }
 
 .spotlight-card img {
@@ -909,10 +503,10 @@ h1, h2, h3, p {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background: #fff;
+  background: var(--text-light);
   padding: 2em;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-light);
 }
 
 .join-form-section h1 {
@@ -943,12 +537,12 @@ input:focus, select:focus, textarea:focus {
 
 /* === FORM VALIDATION FEEDBACK === */
 input:invalid {
-  border-color: #c82333;
+  border-color: var(--error-color);
   background-color: #fff5f5;
 }
 
 input:valid {
-  border-color: #155724;
+  border-color: var(--success-color);
   background-color: #f6fff6;
 }
 
@@ -973,11 +567,11 @@ textarea {
 
 .card {
   flex: 1 1 200px;
-  background-color: #fff;
+  background-color: var(--text-light);
   border-radius: 10px;
   text-align: center;
   padding: 1.2em;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-light);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
@@ -1003,14 +597,14 @@ dialog {
   border-radius: 8px;
   padding: 1.5em 2em;
   max-width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-medium);
   animation: fadeIn 0.3s ease;
 }
 
 .close-modal {
   margin-top: 1em;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-light);
   border: none;
   padding: 0.5em 1em;
   border-radius: 5px;
@@ -1043,23 +637,7 @@ dialog {
 }
 
 /* === BUTTON STYLES === */
-.cta-button {
-  background: var(--secondary-color);
-  color: #222222;
-  border: 2px solid #1a1a1a;
-  font-weight: bold;
-  padding: 0.8em 2em;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e6c547;
-  box-shadow: 0 4px 10px rgba(212,175,55,0.5);
-  transform: translateY(-2px);
-  color: #000000;
-}
+/* Consolidated with main .cta-button rule (line 780) - removed duplicate */
 
 /* === MOBILE REFINEMENTS === */
 @media (max-width: 600px) {
