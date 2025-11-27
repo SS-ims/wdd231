@@ -179,6 +179,11 @@ footer {
   padding: 0.5rem;
 }
 
+/* Active (open) state for hamburger - show cross and highlight */
+.navbar .hamburger.active {
+  color: var(--secondary-color);
+}
+
 /* Enhanced mobile styles for .navbar */
 @media (max-width: 768px) {
   .navbar {

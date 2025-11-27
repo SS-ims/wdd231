@@ -9,7 +9,15 @@ document.querySelector("#lastModified").textContent = document.lastModified;
 const menuButton = document.querySelector("#menu-button");
 const navLinks = document.querySelector("#nav-links");
 menuButton.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  // Toggle visibility
+  const isOpen = navLinks.classList.toggle("show");
+
+  // Reflect state on the button for accessibility
+  menuButton.classList.toggle("active", isOpen);
+  menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+  // Swap icon between hamburger and cross
+  menuButton.textContent = isOpen ? '✕' : '☰';
 });
 
 // Membership modals
