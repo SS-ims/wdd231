@@ -1,5 +1,9 @@
 {
   "workbench.editorAssociations": {
     "*.html": "default"
-  }
+  },
+  "cSpell.words": [
+    "gwamu",
+    "Wakanda"
+  ]
 }
