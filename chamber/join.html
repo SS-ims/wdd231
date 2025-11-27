@@ -6,7 +6,6 @@
   <meta name="description" content="Join the Wakanda Chamber of Commerce and connect with local business leaders." />
   <meta name="author" content="Solomon Sakala" />
   <title>Join the Chamber | Wakanda Chamber of Commerce</title>
-  <link rel="icon" href="favicon.ico">
 
   <!-- Google Fonts (no @import) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- External Styles -->
-  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/styles.css">
 
 
@@ -59,7 +58,7 @@
 
         <label>
           Organizational Title:
-          <input type="text" name="organization-title" title="Your title within the organization" pattern="[A-Za-z\\s\\-]{7,}" autocomplete="organization-title">
+          <input type="text" name="organization-title" title="Organizational Title must be at least 7 characters long and contain only letters, hyphens, and spaces" pattern="[A-Za-z\s\-]{7,}" required autocomplete="organization-title">
         </label>
 
         <label>
