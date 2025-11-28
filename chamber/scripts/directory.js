@@ -51,7 +51,7 @@ function getMembershipLabel(level) {
     case 2:
       return `<span class="badge silver">Silver Member</span>`;
     default:
-      return `<span class="badge bronze">Member</span>`;
+      return `<span class="badge bronze">Bronze Member</span>`;
   }
 }
 

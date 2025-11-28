@@ -5,7 +5,7 @@ document.querySelector("#timestamp").value = new Date().toISOString();
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
-// Hamburger menu toggle
+// Hamburger menu toggle (UNCHANGED)
 const menuButton = document.querySelector("#menu-button");
 const navLinks = document.querySelector("#nav-links");
 menuButton.addEventListener("click", () => {
@@ -39,21 +39,47 @@ closeButtons.forEach(btn => {
   });
 });
 
+// Allow closing modals with ESC key
+modals.forEach(modal => {
+  modal.addEventListener("cancel", () => modal.close());
+});
+
 // Card animation on load
 window.addEventListener("load", () => {
   document.querySelectorAll(".card").forEach((card, i) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
     setTimeout(() => {
+      card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
       card.style.opacity = "1";
       card.style.transform = "translateY(0)";
     }, i * 200);
   });
 });
 
-// Client-side validation feedback
+// Client-side validation feedback (ENHANCED)
 const form = document.querySelector("#membershipForm");
-form.addEventListener("submit", e => {
-  if (!form.checkValidity()) {
-    e.preventDefault();
-    form.reportValidity();
-  }
-});
+
+if (form) {
+  // Show live feedback as user types
+  form.addEventListener("input", e => {
+    const field = e.target;
+    if (field.tagName === "INPUT" || field.tagName === "TEXTAREA" || field.tagName === "SELECT") {
+      if (field.checkValidity()) {
+        field.style.borderColor = "#28a745"; // green
+        field.style.backgroundColor = "#f6fff6";
+      } else {
+        field.style.borderColor = "#d9534f"; // red
+        field.style.backgroundColor = "#fff5f5";
+      }
+    }
+  });
+
+  // Prevent submission if invalid
+  form.addEventListener("submit", e => {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+    }
+  });
+}
