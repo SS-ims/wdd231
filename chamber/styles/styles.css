@@ -194,14 +194,17 @@ footer {
   /* Create a top row for logo and hamburger */
   .navbar .nav-logo {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
+    position: relative;
   }
 
   .navbar .hamburger {
     display: block;
-    order: 2; /* Place hamburger after logo */
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 
   /* Mobile menu for .navbar system - using max-height approach */

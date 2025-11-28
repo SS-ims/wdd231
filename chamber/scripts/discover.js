@@ -38,4 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update footer date
   document.querySelector("#year").textContent = new Date().getFullYear();
   document.querySelector("#lastModified").textContent = document.lastModified;
+
+  // Hamburger menu toggle
+  const menuButton = document.querySelector('#menu-button');
+  const navLinksMenu = document.querySelector('#nav-links');
+  if (menuButton && navLinksMenu) {
+    menuButton.addEventListener('click', () => {
+      // Toggle visibility
+      const isOpen = navLinksMenu.classList.toggle('show');
+
+      // Reflect state on the button for accessibility
+      menuButton.classList.toggle('active', isOpen);
+      menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      // Swap icon between hamburger and cross
+      menuButton.textContent = isOpen ? '✕' : '☰';
+    });
+  }
 });
