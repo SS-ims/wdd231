@@ -326,6 +326,28 @@ footer {
    ========================= */
 /* === UTILITY STYLES === */
 
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.badge.gold {
+  background-color: #D4AF37;
+  color: #222222;
+  border: 2px solid #B8860B;
+}
+
+.badge.silver {
+  background-color: #C0C0C0;
+  color: #222222;
+  border: 2px solid #808080;
+}
+
 /* =========================
    HERO SECTION
    ========================= */
@@ -744,5 +766,58 @@ dialog {
 @media (min-width: 1025px) {
   .discover-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+input, textarea, select {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+/* ==========================================================
+   THANK YOU PAGE ENHANCEMENTS
+   ========================================================== */
+
+.thankyou-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+.thankyou-content {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  max-width: 650px;
+  padding: 2.5em;
+  text-align: center;
+}
+
+.thankyou-content h1 {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  margin-bottom: 0.5em;
+}
+
+.thankyou-content h2 {
+  color: var(--secondary-color);
+  margin-top: 1.5em;
+}
+
+.submitted-info {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0 2em;
+  text-align: left;
+}
+
+.submitted-info li {
+  margin: 0.6em 0;
+  background: #f9f9f9;
+  padding: 0.6em 0.8em;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .thankyou-content {
+    padding: 1.5em;
   }
 }
